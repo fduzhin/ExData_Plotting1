@@ -12,15 +12,10 @@ both_days$Date <- as.Date(both_days$Date,format="%d/%m/%Y")
 
 summary(both_days)  
 
-#active_power <- both_days$Global_active_power
-#active_time <- strptime(paste(both_days$Date,both_days$Time),format="%d/%m/%Y %H:%M:%S")
-#active_time[1000:1010]
-
-#png(filename = "plot3.png")
+png(filename = "plot3.png")
 plot(both_days$Time,both_days$Sub_metering_1,xlab="",ylab="Energy sub metering",main="",type="n")
 lines(both_days$Time,both_days$Sub_metering_1,col="black")
 lines(both_days$Time,both_days$Sub_metering_2,col="red")
 lines(both_days$Time,both_days$Sub_metering_3,col="blue")
 legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","blue","red"),lty=c(1,1,1),lwd=c(1.5,1.5,1.5))
-#legend(both_days$Time[1900],40,c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","blue","red"),lty=c(1,1,1),lwd=c(1.5,1.5,1.5))
-#dev.off()
+dev.off()
